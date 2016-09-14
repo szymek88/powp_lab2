@@ -3,9 +3,15 @@ package edu.kis.vh.stacks.list;
 public class StackList {
 
 	private static final int EMPTY = -1;
+	
 	private Node last;
+	private int total = EMPTY;
 
-	public void pushElement(int i) {
+	public int getTotal() {
+		return total;
+	}
+
+	public void push(int i) {
 		if (last == null)
 			last = new Node(i);
 		else {
@@ -13,27 +19,29 @@ public class StackList {
 			last.getNext().setPrev(last);
 			last = last.getNext();
 		}
+		total++;
 	}
 
-	public boolean empty() {
+	public boolean isEmpty() {
 		return last == null;
 	}
 
-	public boolean full() {
+	public boolean isFull() {
 		return false;
 	}
 
-	public int peek() {
-		if (empty())
+	public int top() {
+		if (isEmpty())
 			return EMPTY;
 		return last.getValue();
 	}
 
 	public int pop() {
-		if (empty())
+		if (isEmpty())
 			return EMPTY;
 		int ret = last.getValue();
 		last = last.getPrev();
+		total--;
 		return ret;
 	}
 	
