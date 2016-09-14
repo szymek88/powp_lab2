@@ -1,16 +1,16 @@
-package edu.kis.vh.stacks.list;
+package edu.kis.vh.stacks.impl;
 
-public class StackList {
+public class StackList implements StackImpl {
 
-	private static final int EMPTY = -1;
-	
 	private Node last;
-	private int total = EMPTY;
+	private int total = StackConstants.EMPTY;
 
+	@Override
 	public int getTotal() {
 		return total;
 	}
 
+	@Override
 	public void push(int i) {
 		if (last == null)
 			last = new Node(i);
@@ -22,23 +22,27 @@ public class StackList {
 		total++;
 	}
 
+	@Override
 	public boolean isEmpty() {
 		return last == null;
 	}
 
+	@Override
 	public boolean isFull() {
 		return false;
 	}
 
+	@Override
 	public int top() {
 		if (isEmpty())
-			return EMPTY;
+			return StackConstants.EMPTY;
 		return last.getValue();
 	}
 
+	@Override
 	public int pop() {
 		if (isEmpty())
-			return EMPTY;
+			return StackConstants.EMPTY;
 		int ret = last.getValue();
 		last = last.getPrev();
 		total--;

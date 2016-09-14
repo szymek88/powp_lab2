@@ -1,41 +1,43 @@
 package edu.kis.vh.stacks;
 
-import edu.kis.vh.stacks.list.StackList;
+import edu.kis.vh.stacks.impl.StackImpl;
+import edu.kis.vh.stacks.impl.StackList;
 
 public class Stack {
 
-	private StackList stackList;
+	// klasa jest teraz bardziej uniwersalna, poniewaz nie jest przywiazana do jednego typu
+	private StackImpl stackImpl;
 
-	public Stack(StackList stackList) {
-		this.stackList = stackList;
+	public Stack(StackImpl stackImpl) {
+		this.stackImpl = stackImpl;
 	}
 
 	public Stack() {
-		stackList = new StackList();
+		stackImpl = new StackList();
 	}
 
 	public int getTotal() {
-		return stackList.getTotal();
+		return stackImpl.getTotal();
 	}
 
 	public void push(int i) {
-		stackList.push(i);
+		stackImpl.push(i);
 	}
 
 	public boolean isEmpty() {
-		return stackList.isEmpty();
+		return stackImpl.isEmpty();
 	}
 
 	public boolean isFull() {
-		return stackList.isFull();
+		return stackImpl.isFull();
 	}
 
 	public int top() {
-		return stackList.top();
+		return stackImpl.top();
 	}
 
 	public int pop() {
-		return stackList.pop();
+		return stackImpl.pop();
 	}
 	
 }
