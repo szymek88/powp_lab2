@@ -7,6 +7,8 @@ public class Stack {
 
 	// Open declaration skacze do deklaracji metody, quick type hierarchy skacze do implementacji
 	
+	// StackFIFO lamie zasade izolacji, poniewaz tworzy StackList "na sztywno"
+	
 	// klasa jest teraz bardziej uniwersalna, poniewaz nie jest przywiazana do jednego typu
 	private StackImpl stackImpl;
 
